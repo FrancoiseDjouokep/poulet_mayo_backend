@@ -22,14 +22,14 @@ public class AchatController {
         this.achatService = achatService;
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public Achat creer(
             @RequestBody CreateAchatRequest request
     ) {
         return achatService.creer(request);
     }
 
-    @GetMapping
+    @GetMapping("/read")
     public List<Achat> lireTous() {
         return achatService.lireTous();
     }

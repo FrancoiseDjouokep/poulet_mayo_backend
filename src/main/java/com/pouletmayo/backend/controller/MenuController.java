@@ -21,12 +21,12 @@ public class MenuController {
         this.menuService = menuService;
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public Menu creer(@RequestBody CreateMenuRequest request) {
         return menuService.creer(request);
     }
 
-    @GetMapping
+    @GetMapping("/read")
     public List<Menu> lireTous() {
         return menuService.lireTous();
     }

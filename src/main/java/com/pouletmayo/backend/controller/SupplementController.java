@@ -18,12 +18,12 @@ public class SupplementController {
         this.supplementService = supplementService;
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public Supplement creer(@RequestBody Supplement supplement) {
         return supplementService.creer(supplement);
     }
 
-    @GetMapping
+    @GetMapping("/read")
     public List<Supplement> lireTous() {
         return supplementService.lireTous();
     }

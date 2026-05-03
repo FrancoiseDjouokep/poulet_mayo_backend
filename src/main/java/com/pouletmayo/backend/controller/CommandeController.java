@@ -22,14 +22,14 @@ public class CommandeController {
         this.commandeService = commandeService;
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public Commande creer(
             @RequestBody CreateCommandeRequest request
     ) {
         return commandeService.creer(request);
     }
 
-    @GetMapping
+    @GetMapping("/read")
     public List<Commande> lireToutes() {
         return commandeService.lireToutes();
     }

@@ -22,12 +22,12 @@ public class ProduitController {
         this.produitService = produitService;
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public Produit creer(@RequestBody ProduitRequest request) {
         return produitService.creer(request);
     }
 
-    @GetMapping
+    @GetMapping("/read")
     public List<Produit> lister() {
         return produitService.lister();
     }

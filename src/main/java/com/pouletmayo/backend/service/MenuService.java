@@ -20,7 +20,7 @@ public class MenuService {
     public Menu creer(CreateMenuRequest request) {
         Menu menu = new Menu();
 
-        menu.setNom(request.getNomMenu());
+        menu.setNom(request.getNom());
         menu.setPrix(request.getPrix());
 
         return menuRepository.save(menu);

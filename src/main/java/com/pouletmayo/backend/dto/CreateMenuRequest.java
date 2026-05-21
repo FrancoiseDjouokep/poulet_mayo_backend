@@ -1,18 +1,18 @@
 package com.pouletmayo.backend.dto;
 public class CreateMenuRequest {
 
-    private String nomMenu;
+    private String nom;
     private Integer prix;
 
     public CreateMenuRequest() {
     }
 
-    public String getNomMenu() {
-        return nomMenu;
+    public String getNom() {
+        return nom;
     }
 
-    public void setNomMenu(String nomMenu) {
-        this.nomMenu = nomMenu;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
     public Integer getPrix() {

@@ -10,6 +10,7 @@ import com.pouletmayo.backend.repository.SupplementRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -32,21 +33,19 @@ public class CommandeService {
     public Commande creer(CreateCommandeRequest request) {
 
         Menu menu = menuRepository.findById(request.getMenuId())
-                .orElseThrow(() ->
-                        new RuntimeException("Menu introuvable"));
+                .orElseThrow(() -> new RuntimeException("Menu introuvable"));
 
         List<Supplement> supplements =
-                supplementRepository.findAllById(
-                        request.getSupplementsIds()
-                );
+                supplementRepository.findAllById(request.getSupplementsIds());
 
         Commande commande = new Commande();
 
+        commande.setNomClient(request.getNomClient());
         commande.setMenu(menu);
         commande.setQuantite(request.getQuantite());
         commande.setPayee(request.getPayee());
         commande.setSupplements(supplements);
-
+        commande.setDateCommande(LocalDateTime.now());
         commande.calculerPrixTotal();
 
         return commandeRepository.save(commande);

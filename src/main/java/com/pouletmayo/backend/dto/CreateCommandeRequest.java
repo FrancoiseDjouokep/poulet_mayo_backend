@@ -4,43 +4,24 @@ import java.util.List;
 
 public class CreateCommandeRequest {
 
+    private String nomClient;   // ← nouveau
     private Long menuId;
-
     private Integer quantite;
-
     private Boolean payee;
-
     private List<Long> supplementsIds;
 
-    public Long getMenuId() {
-        return menuId;
-    }
+    public String getNomClient() { return nomClient; }
+    public void setNomClient(String nomClient) { this.nomClient = nomClient; }
 
-    public void setMenuId(Long menuId) {
-        this.menuId = menuId;
-    }
+    public Long getMenuId() { return menuId; }
+    public void setMenuId(Long menuId) { this.menuId = menuId; }
 
-    public Integer getQuantite() {
-        return quantite;
-    }
+    public Integer getQuantite() { return quantite; }
+    public void setQuantite(Integer quantite) { this.quantite = quantite; }
 
-    public void setQuantite(Integer quantite) {
-        this.quantite = quantite;
-    }
+    public Boolean getPayee() { return payee; }
+    public void setPayee(Boolean payee) { this.payee = payee; }
 
-    public Boolean getPayee() {
-        return payee;
-    }
-
-    public void setPayee(Boolean payee) {
-        this.payee = payee;
-    }
-
-    public List<Long> getSupplementsIds() {
-        return supplementsIds;
-    }
-
-    public void setSupplementsIds(List<Long> supplementsIds) {
-        this.supplementsIds = supplementsIds;
-    }
+    public List<Long> getSupplementsIds() { return supplementsIds; }
+    public void setSupplementsIds(List<Long> supplementsIds) { this.supplementsIds = supplementsIds; }
 }

@@ -14,6 +14,9 @@ public class Commande {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column
+    private String nomClient;
+
     @ManyToOne(optional = false)
     private Menu menu;
 
@@ -103,4 +106,6 @@ public class Commande {
     public void setDateCommande(LocalDateTime dateCommande) {
         this.dateCommande = dateCommande;
     }
+    public String getNomClient() { return nomClient; }
+    public void setNomClient(String nomClient) { this.nomClient = nomClient; }
 }
